@@ -6,7 +6,7 @@ from .froms import ChatMessageCraeteForm
 # Create your views here.
 @login_required
 def chat_view(request):
-    chat_group = get_object_or_404(ChatGroup, group_name='We_Are_Friends')
+    chat_group = get_object_or_404(ChatGroup, group_name='public-chat')
     chat_messages = chat_group.chat_message.all()[:30]
     form = ChatMessageCraeteForm()
     if request.htmx:
